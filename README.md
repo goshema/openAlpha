@@ -156,7 +156,7 @@ Quantitative models are based on historical data, which is not indicative of fut
 Contributions, issues, and feature requests are welcome! 
 
 Feel free to:
-- Check the [issues page](https://github.com/goshema/open-alpha-screener/issues)
+- Check the [issues page](issues)
 - Submit pull requests
 - Reach out via [GitHub profile](https://github.com/goshema)
 
