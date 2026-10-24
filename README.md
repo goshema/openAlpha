@@ -86,8 +86,8 @@ Once the top stocks are identified, OpenAlpha constructs a model portfolio using
 ### Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/open-alpha-screener.git
-   cd open-alpha-screener
+   git clone https://github.com/goshema/open-alpha.git
+   cd open-alpha
    ```
 2. (Recommended) Create a virtual environment:
    ```bash
