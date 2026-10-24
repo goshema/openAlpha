@@ -128,7 +128,7 @@ Quantitative models are based on historical data, which is not indicative of fut
 
 ##  Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/open-alpha-screener/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/goshema/open-alpha-screener/issues).
 
 ## 📄 License
 
