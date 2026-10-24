@@ -11,7 +11,7 @@ Built entirely with open-source libraries, it requires no proprietary data feeds
 
 ---
 
-## ️ Architecture & Methodology
+## 🏛️ Architecture & Methodology
 
 Unlike standard screeners that simply sort by a single metric, OpenAlpha constructs a **Composite Factor Score (0-100)** based on five distinct, uncorrelated investment pillars. 
 
@@ -88,7 +88,6 @@ Once the top stocks are identified, OpenAlpha constructs a model portfolio using
    ```bash
    git clone https://github.com/goshema/open-alpha.git
    cd open-alpha
-   ```
 2. (Recommended) Create a virtual environment:
    ```bash
    python -m venv myenv
