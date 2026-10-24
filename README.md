@@ -67,7 +67,7 @@ The model includes a built-in regime filter. If the benchmark (SPY) drops more t
 
 ---
 
-## 📦 Portfolio Construction
+##  Portfolio Construction
 
 Once the top stocks are identified, OpenAlpha constructs a model portfolio using institutional constraints:
 
@@ -86,8 +86,9 @@ Once the top stocks are identified, OpenAlpha constructs a model portfolio using
 ### Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/goshema/open-alpha.git
-   cd open-alpha
+   git clone https://github.com/goshema/open-alpha-screener.git
+   cd open-alpha-screener
+   ```
 2. (Recommended) Create a virtual environment:
    ```bash
    python -m venv myenv
@@ -95,9 +96,8 @@ Once the top stocks are identified, OpenAlpha constructs a model portfolio using
    ```
 3. Install dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip install streamlit pandas numpy yfinance plotly requests streamlit-autorefresh
    ```
-   *(Or manually: `pip install streamlit pandas numpy yfinance plotly requests streamlit-autorefresh`)*
 
 ### Run the App
 ```bash
@@ -109,11 +109,37 @@ The application will open automatically in your default web browser at `localhos
 
 ## ⚙️ Features
 
-*   **Batch Data Pipeline:** Downloads 500+ tickers in a single HTTP request, reducing fetch time from 3+ minutes to ~15 seconds and preventing IP rate-limiting.
+*   **Batch Data Pipeline:** Downloads 500+ tickers efficiently with parallel processing, preventing IP rate-limiting.
 *   **Look-Ahead Bias Prevention:** Uses strictly trailing/realized data for fundamental metrics.
 *   **Non-Blocking UI:** Utilizes `streamlit-autorefresh` to update data in the background without freezing the user interface.
 *   **Deep Dive Analytics:** Interactive Plotly charts for Price/Relative Strength, Factor Heatmaps, and Risk/Reward scatter plots.
 *   **Three-Tier Fallback:** If Wikipedia fails to load the S&P 500 list, it automatically falls back to a GitHub CSV, and finally to a hardcoded list of mega-cap stocks.
+
+---
+
+## 📊 What's Inside
+
+### Risk Metrics
+- **Vasicek-Adjusted Beta**: Reduces estimation error through Bayesian shrinkage
+- **Downside Beta**: Measures sensitivity only during market declines
+- **Idiosyncratic Volatility**: Stock-specific risk uncorrelated with market
+- **CVaR (95%)**: Conditional Value at Risk - expected loss in worst 5% of cases
+- **Max Drawdown**: Largest peak-to-trough decline
+- **Ulcer Index**: Measures depth and duration of drawdowns
+
+### Fundamental Metrics
+- **ROIC**: Return on Invested Capital
+- **Margins**: Gross, Operating, and Free Cash Flow margins
+- **Growth**: Quarterly revenue and earnings growth
+- **Financial Health**: Debt-to-Equity, Current Ratio, Interest Coverage
+- **Valuation**: Sector-relative P/E, P/B, EV/EBITDA
+- **Earnings Quality**: Accruals ratio to detect earnings manipulation
+
+### Momentum Indicators
+- **12-1 Month Momentum**: Price return excluding most recent month
+- **Relative Strength**: 3-year price performance vs SPY
+- **52-Week High Proximity**: Current price as % of 52-week high
+- **RS Trend**: Whether RS line is above/below 252-day MA
 
 ---
 
@@ -127,9 +153,25 @@ Quantitative models are based on historical data, which is not indicative of fut
 
 ##  Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/goshema/open-alpha-screener/issues).
+Contributions, issues, and feature requests are welcome! 
+
+Feel free to:
+- Check the [issues page](https://github.com/goshema/open-alpha-screener/issues)
+- Submit pull requests
+- Reach out via [GitHub profile](https://github.com/goshema)
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
+
+---
+
+##  Acknowledgments
+
+Built with:
+- **Streamlit** - For the amazing web framework
+- **yfinance** - For market data
+- **Pandas & NumPy** - For data manipulation
+- **Plotly** - For interactive visualizations
+
+---
